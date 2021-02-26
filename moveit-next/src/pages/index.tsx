@@ -8,6 +8,7 @@ import { Profile } from "../components/Profile";
 import styles from '../styles/pages/Home.module.css';
 
 import Head from 'next/head';
+import { ChallengeBox } from "../components/ChallengeBox";
 
 // https://youtu.be/7ceWRavb6Ac?t=3603
 
@@ -30,7 +31,7 @@ export default function Home() {
         <Countdown />
       </div>
       <div>
-
+      <ChallengeBox />
       </div>
     </section>
   </div>  
