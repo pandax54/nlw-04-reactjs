@@ -9,6 +9,7 @@ import styles from '../styles/pages/Home.module.css';
 
 import Head from 'next/head';
 import { ChallengeBox } from "../components/ChallengeBox";
+import { CountdownProvider } from "../contexts/CountdownContext";
 
 // https://youtu.be/7ceWRavb6Ac?t=3603
 
@@ -24,6 +25,8 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
       </Head> */}
     <ExperienceBar />
+
+    <CountdownProvider>
     <section>
       <div>
         <Profile />
@@ -34,6 +37,7 @@ export default function Home() {
       <ChallengeBox />
       </div>
     </section>
+    </CountdownProvider>
   </div>  
   )
 }
