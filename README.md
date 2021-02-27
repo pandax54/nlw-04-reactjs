@@ -40,7 +40,7 @@ O move.it é um app que une a técnica de Pomodoro com a realização de exercí
   <img src="./moveit-next/public/demonstracao2.gif" width="100%">
 
   <video width="400" controls>
-    <source src="./moveit-next/public/video.mp4" type="video/mp4">
+    <source src="./moveit-next/public/video.mp4" type="video/mp3">
   </video>
 
 ## 🔖 Layout
