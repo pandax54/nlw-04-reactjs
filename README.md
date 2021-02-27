@@ -44,6 +44,7 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 ## 🚀 Como executar
 
 - Clone o repositório
+- Acesse a pasta "moveit-next"
 - Instale as dependências com `yarn`
 - Inicie o servidor com `yarn dev`
 
