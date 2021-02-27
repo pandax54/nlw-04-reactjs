@@ -39,6 +39,10 @@ O move.it é um app que une a técnica de Pomodoro com a realização de exercí
 
   <img src="./moveit-next/public/demonstracao2.gif" width="100%">
 
+  <video width="400" controls>
+    <source src="./moveit-next/public/video.mp4" type="video/mp4">
+  </video>
+
 ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/ge20pu3ofMOKoliUyKx1Nl/Move.it-1.0). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
