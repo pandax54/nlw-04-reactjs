@@ -37,7 +37,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O move.it é um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem passa muito tempo na frente do computador.
 
-  <img src="./moveit-next/public/demonstracao.gif" width="100%">
+  <img src="./moveit-next/public/demonstracao2.gif" width="100%">
 
 ## 🔖 Layout
 
