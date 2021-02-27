@@ -1,5 +1,6 @@
 // import React from "react";
 // import Head from 'next/head';
+import { GetServerSideProps } from 'next'
 import React from "react";
 import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
@@ -10,12 +11,23 @@ import styles from '../styles/pages/Home.module.css';
 import Head from 'next/head';
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
+import { ChallengesProvider } from '../contexts/ChallengeContext';
 
 // https://youtu.be/7ceWRavb6Ac?t=3603
 
+interface HomeProps {
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
+}
 
-export default function Home() {
+export default function Home(props: HomeProps) {
   return (
+    <ChallengesProvider
+    level={props.level}
+    currentExperience={props.currentExperience}
+    challengesCompleted={props.challengesCompleted}
+    >
     <div className={styles.container}>
       <Head>
         <title>Inicio | move.it</title>
@@ -38,6 +50,23 @@ export default function Home() {
       </div>
     </section>
     </CountdownProvider>
-  </div>  
+  </div> 
+  </ChallengesProvider> 
   )
+}
+
+
+// lesson 5 22:00
+// node server
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
+  // accessing the cookies
+  const {level, currentExperience, challengesCompleted} = ctx.req.cookies;
+  return {
+    props: {
+      level: Number(level), 
+      currentExperience: Number(currentExperience), 
+      challengesCompleted: Number(challengesCompleted)
+    }
+  }
 }
