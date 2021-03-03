@@ -1,17 +1,77 @@
 .container {
-  height: 100vh;
-  max-width: 992px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-
-  display: flex;
-  flex-direction: column;
+    background: var(--primary-color);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.container section {
-  flex: 1;
-  display: grid;
-  grid-template-columns:  1fr 1fr;;
-  gap: 6.25rem;
-  align-content: center;
-}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    width: 100%;
+    max-width: 420px;
+    margin-left: 7.5rem;
+    margin-right: 12.5rem;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 6rem;
+    color: var(--white)
+  }
+  
+  .github {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .github p {
+    max-width: 255px;
+    margin-left: 1.5rem;
+  
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--light-rose);
+  }
+  
+  .content button {
+    padding: 1.5rem 1.8rem;
+  
+    background:var(--title);
+    color: var(--light-rose);
+    font-size: 1.25rem;
+  
+    border-radius: 5px;
+    border: 0;
+  
+    display: flex;
+    align-items: center;
+  
+    transition: background-color 0.2s;
+  }
+  
+  .content button + button {
+    margin-top: 0.9rem;
+  }
+  
+  .content button svg {
+    margin-right: 1.5rem;
+  }
+  
+  .content button:hover {
+    background:var(--yellow-1);
+    color: var(--title);
+  }
+
+  .content button:hover svg {
+    color: var(--title);
+    fill:var(--title) ;  
+  }

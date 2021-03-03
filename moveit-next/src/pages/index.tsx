@@ -1,19 +1,15 @@
-// import React from "react";
-// import Head from 'next/head';
-import { GetServerSideProps } from 'next'
-import React from "react";
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import { Countdown } from "../components/Countdown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
+import React, { useEffect } from "react";
 import styles from '../styles/pages/Home.module.css';
+import { GoMarkGithub } from 'react-icons/go';
+import { FaGoogle } from 'react-icons/fa';
+import { FiLogIn } from 'react-icons/fi';
 
 import Head from 'next/head';
-import { ChallengeBox } from "../components/ChallengeBox";
-import { CountdownProvider } from "../contexts/CountdownContext";
-import { ChallengesProvider } from '../contexts/ChallengeContext';
 
-// https://youtu.be/7ceWRavb6Ac?t=3603
+
+import { signIn, useSession } from 'next-auth/client';
+import { useRouter } from 'next/router';
+
 
 interface HomeProps {
   level: number;
@@ -22,51 +18,43 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  
+  const [session] = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if(session) {
+      router.push('/dashboard');
+    }
+  }, [session, router]);
+
   return (
-    <ChallengesProvider
-    level={props.level}
-    currentExperience={props.currentExperience}
-    challengesCompleted={props.challengesCompleted}
-    >
     <div className={styles.container}>
       <Head>
-        <title>Inicio | move.it</title>
+        <title>Login | move.it </title>
       </Head>
-      {/* <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
-      </Head> */}
-    <ExperienceBar />
+      <img src="/icons/symbols.svg" className={styles.background} />
 
-    <CountdownProvider>
-    <section>
-      <div>
-        <Profile />
-        <CompletedChallenges />
-        <Countdown />
+      <div className={styles.content}>
+        <img src="/icons/Logo-home.png" alt="Move.it"/>
+
+        <h2>Bem-vindo</h2>
+        
+        <div className={styles.github}>
+          <FiLogIn size={24} color="#FBDFDF" />
+          <p>Faça login com seu Github ou Google para começar!</p>
+        </div>
+
+        <button type="button" onClick={() => signIn('github', { callbackUrl: `${process.env.REACT_APP_URL}/dashboard` })}>
+          <GoMarkGithub size={24} color="#FBDFDF" />
+          Continuar com Github
+        </button>
+
+        <button type="button" onClick={() => signIn('google', { callbackUrl: `${process.env.REACT_APP_URL}/dashboard` })}>
+          <FaGoogle size={24} />
+          Continuar com Google
+        </button>
       </div>
-      <div>
-      <ChallengeBox />
-      </div>
-    </section>
-    </CountdownProvider>
-  </div> 
-  </ChallengesProvider> 
+    </div>
   )
-}
-
-
-// lesson 5 22:00
-// node server
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
-  // accessing the cookies
-  const {level, currentExperience, challengesCompleted} = ctx.req.cookies;
-  return {
-    props: {
-      level: Number(level), 
-      currentExperience: Number(currentExperience), 
-      challengesCompleted: Number(challengesCompleted)
-    }
-  }
 }
