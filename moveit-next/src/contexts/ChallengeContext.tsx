@@ -8,7 +8,7 @@ import { LevelUpModal } from '../components/LevelUpModal';
 
 
 interface Challenge {
-    type: 'body' | 'eye';
+    type: 'body-new' | 'eye-new';
     description: string;
     amount: number;
 }

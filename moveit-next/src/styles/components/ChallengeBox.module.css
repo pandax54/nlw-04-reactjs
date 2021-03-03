@@ -48,7 +48,7 @@
 }
 
 .challengeActive header {
-    color: var(--blue);
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 1.25rem;
     padding: 0 2rem 1.5rem;
@@ -95,11 +95,11 @@
 }
 
 .challengeActive footer button.challangeFailedButton {
-    background: var(--red);
+    background: var(--error);
 }
-
+ 
 .challengeActive footer button.challangesucceededButton {
-    background: var(--green);
+    background: var(--success);
 }
 
 .challengeActive footer button:hover {

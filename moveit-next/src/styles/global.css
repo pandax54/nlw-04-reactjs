@@ -16,6 +16,31 @@
   --blue: #5965e0;
   --blue-dark: #4953b8;
   --blue-twitter: #2aa9e0;
+
+  --background: #F2F5F4;
+  --rose: #F27373;
+  --light-rose: #FAE9E9;
+  --yellow-1: #F7CA44;
+  --yellow-2: #C05C14;
+  --teal-1: #E6FCF5;
+  --teal-2: #63E6BE;
+  --teal-3: #20C997;
+  --teal-4: #0CA678;
+  --red-danger: #EB3E3E;
+  --gray-line: #E0DCDD;
+  --text: #675C5C;
+  --text-highlight: #b3b9ff;
+  --title: #362428;
+  --blue-teal: #0C94A6;
+  --light-blue-teal: rgba(12, 148, 166, 0.14);
+
+  --primary-color: var(--rose);
+  --primary-color-hover: #E15454;
+  --light-primary-color: var(--light-rose);
+  --highlight-color: var(--yellow-1);
+  --error: var(--red-danger);
+  --success: var(--teal-3) ;
+
 }
 
 @media(max-width: 1080px) {
